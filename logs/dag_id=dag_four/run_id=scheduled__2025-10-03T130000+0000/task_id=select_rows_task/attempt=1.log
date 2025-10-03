@@ -1,0 +1,27 @@
+[2025-10-03T13:02:11.251+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-10-03T13:02:11.274+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_four.select_rows_task scheduled__2025-10-03T13:00:00+00:00 [queued]>
+[2025-10-03T13:02:11.283+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_four.select_rows_task scheduled__2025-10-03T13:00:00+00:00 [queued]>
+[2025-10-03T13:02:11.284+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-10-03T13:02:11.302+0000] {taskinstance.py:2330} INFO - Executing <Task(PostgresOperator): select_rows_task> on 2025-10-03 13:00:00+00:00
+[2025-10-03T13:02:11.310+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=677) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-10-03T13:02:11.312+0000] {standard_task_runner.py:63} INFO - Started process 679 to run task
+[2025-10-03T13:02:11.312+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_four', 'select_rows_task', 'scheduled__2025-10-03T13:00:00+00:00', '--job-id', '170', '--raw', '--subdir', 'DAGS_FOLDER/dag_four.py', '--cfg-path', '/tmp/tmpl6r4ynu0']
+[2025-10-03T13:02:11.316+0000] {standard_task_runner.py:91} INFO - Job 170: Subtask select_rows_task
+[2025-10-03T13:02:11.336+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-10-03T13:02:11.395+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_four.select_rows_task scheduled__2025-10-03T13:00:00+00:00 [running]> on host 7aff8d0a020c
+[2025-10-03T13:02:11.492+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_four' AIRFLOW_CTX_TASK_ID='select_rows_task' AIRFLOW_CTX_EXECUTION_DATE='2025-10-03T13:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-03T13:00:00+00:00'
+[2025-10-03T13:02:11.494+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-10-03T13:02:11.495+0000] {sql.py:276} INFO - Executing: SELECT * FROM my_table;
+[2025-10-03T13:02:11.504+0000] {base.py:84} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-10-03T13:02:11.515+0000] {base.py:84} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-10-03T13:02:11.520+0000] {sql.py:487} INFO - Running statement: SELECT * FROM my_table;, parameters: None
+[2025-10-03T13:02:11.522+0000] {sql.py:496} INFO - Rows affected: 4
+[2025-10-03T13:02:11.523+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-10-03T13:02:11.550+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dag_four, task_id=select_rows_task, run_id=scheduled__2025-10-03T13:00:00+00:00, execution_date=20251003T130000, start_date=20251003T130211, end_date=20251003T130211
+[2025-10-03T13:02:11.611+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-10-03T13:02:11.628+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-10-03T13:02:11.656+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

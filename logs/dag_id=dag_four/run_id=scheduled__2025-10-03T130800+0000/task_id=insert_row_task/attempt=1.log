@@ -1,0 +1,30 @@
+[2025-10-03T13:10:06.933+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-10-03T13:10:06.973+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_four.insert_row_task scheduled__2025-10-03T13:08:00+00:00 [queued]>
+[2025-10-03T13:10:06.987+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_four.insert_row_task scheduled__2025-10-03T13:08:00+00:00 [queued]>
+[2025-10-03T13:10:06.989+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-10-03T13:10:07.013+0000] {taskinstance.py:2330} INFO - Executing <Task(PostgresOperator): insert_row_task> on 2025-10-03 13:08:00+00:00
+[2025-10-03T13:10:07.025+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=826) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-10-03T13:10:07.028+0000] {standard_task_runner.py:63} INFO - Started process 831 to run task
+[2025-10-03T13:10:07.028+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_four', 'insert_row_task', 'scheduled__2025-10-03T13:08:00+00:00', '--job-id', '213', '--raw', '--subdir', 'DAGS_FOLDER/dag_four.py', '--cfg-path', '/tmp/tmpkuiz5w0j']
+[2025-10-03T13:10:07.033+0000] {standard_task_runner.py:91} INFO - Job 213: Subtask insert_row_task
+[2025-10-03T13:10:07.054+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-10-03T13:10:07.127+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_four.insert_row_task scheduled__2025-10-03T13:08:00+00:00 [running]> on host 7aff8d0a020c
+[2025-10-03T13:10:07.288+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_four' AIRFLOW_CTX_TASK_ID='insert_row_task' AIRFLOW_CTX_EXECUTION_DATE='2025-10-03T13:08:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-03T13:08:00+00:00'
+[2025-10-03T13:10:07.292+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-10-03T13:10:07.292+0000] {sql.py:276} INFO - Executing: INSERT INTO my_table (name) VALUES ('Hello from Airflow');
+[2025-10-03T13:10:07.304+0000] {base.py:84} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-10-03T13:10:07.316+0000] {base.py:84} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-10-03T13:10:07.323+0000] {sql.py:487} INFO - Running statement: INSERT INTO my_table (name) VALUES ('Hello from Airflow');, parameters: None
+[2025-10-03T13:10:07.325+0000] {sql.py:496} INFO - Rows affected: 1
+[2025-10-03T13:10:07.331+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-10-03T13:10:07.344+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dag_four, task_id=insert_row_task, run_id=scheduled__2025-10-03T13:08:00+00:00, execution_date=20251003T130800, start_date=20251003T131006, end_date=20251003T131007
+[2025-10-03T13:10:07.405+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-10-03T13:10:07.418+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/models/baseoperator.py:1297: AirflowProviderDeprecationWarning: Call to deprecated class PostgresOperator. (Please use `***.providers.common.sql.operators.sql.SQLExecuteQueryOperator`.Also, you can provide `hook_params={'schema': <database>}`.)
+  result = cls.__new__(cls)
+
+[2025-10-03T13:10:07.434+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-10-03T13:10:07.439+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
